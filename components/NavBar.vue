@@ -3,11 +3,12 @@
     <!-- Main Navbar -->
     <nav class="flex items-center justify-between bg-[#3b5998] px-6 py-3 shadow-md">
       <!-- Left side (logo / brand) -->
-      <div class="flex items-center space-x-2">
-        <h1 class="text-white text-2xl font-bold font-sans tracking-tight ml-20">
-          collinbook
-        </h1>
-      </div>
+      <button
+        class="text-white text-2xl font-bold font-sans tracking-tight ml-10 hover:scale-105 transition"
+        @click="scrollToTop"
+      >
+        collinbook
+      </button>
 
       <!-- Mobile menu button -->
       <button class="text-white focus:outline-none md:hidden">
@@ -30,5 +31,12 @@
 
 <script setup>
 defineOptions({ name: 'DevNav' })
-</script>
 
+// Just use this — simplest and reliable
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  })
+}
+</script>

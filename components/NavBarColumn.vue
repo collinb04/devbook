@@ -14,13 +14,6 @@
       </NuxtLink>
     </nav>
 
-    <!-- Daily Quote Box -->
-    <div class="bg-[#e7f3ff] text-[#0a2255] font-medium px-2 py-4 w-full mt-2 rounded-lg">
-      <div class="text-[#0a2255] font-bold mb-1">
-        Daily Quote
-      </div>
-      "Your daily quote goes here — stay inspired!"
-    </div>
   </div>
 </template>
 
@@ -31,8 +24,7 @@ const route = useRoute()
 
 const links = [
   { name: 'Home', path: '/' },
-  { name: 'Education', path: '/education' },
-  { name: 'Projects', path: '/projects' },
-  { name: 'Blog', path: '/blog' }
+  { name: 'Education & Work', path: '/education' },
+  { name: 'Projects & Skills', path: '/projects' },
 ]
 </script>

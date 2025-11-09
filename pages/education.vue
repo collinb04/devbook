@@ -1,318 +1,205 @@
 <template>
-  <section class="flex flex-col space-y-8">
-    <!-- Page Header -->
-     
-    <!-- <div class="h-10 bg-[#e7f3ff]"> -->
-        <h2 class="text-2xl md:text-3xl font-bold text-[#0a2255] ml-1">
-        Education & Work
-        </h2>
-    <!-- </div> -->
+  <Appear>
+  <section class="flex flex-col space-y-10 rounded-lg bg-[#f7f9fc] p-8 font-[Lucida_Grande]">
+    <!-- Header -->
+    <div class="border border-gray-300 bg-white px-6 py-4 shadow-sm">
+      <h1 class="text-2xl font-bold mb-1">Education & Work Experience</h1>
+      <p class="text-sm text-gray-600">
+        A collection of my current and past work experiences/education.
+      </p>
+    </div>
 
-    <!-- Divider -->
     <div class="h-[1px] bg-gray-200"></div>
-
-    <!-- Work Experience Section -->
-    <div class="flex flex-col space-y-6">
-      <h3 class="text-gray-400 font-sans text-sm md:text-base uppercase tracking-wide">
+    
+    <!-- Work Experience -->
+    <div class="flex flex-col space-y-8">
+      <h3 class="text-gray-400 uppercase tracking-wide text-sm font-semibold">
         Experience
       </h3>
 
-      <!-- Edge Forestry -->
-      <div class="flex flex-row items-start space-x-4">
+      <div v-for="(job, i) in jobs" :key="i" class="flex items-start space-x-4">
         <div class="h-20 w-20 flex-shrink-0">
-            <img src="/leaves.png"/>
+          <img :src="job.logo" alt="Logo" class="object-contain" />
         </div>
-        <div class="flex flex-col space-y-1">
-          <div class="text-[#0a2255] font-semibold text-base md:text-lg hover:text-[#6c86bd]">
-            <a
-              href="https://edgeforestry.com/"
-              target="_blank"
-            >
-            Edge Forestry
-            </a>
-          </div>
-          <div class="text-[#0a2255] text-sm md:text-base">
-            Software Developer
-          </div>
-          <div class="flex flex-row flex-wrap items-center space-x-2 text-gray-400 text-sm md:text-base">
-            <span>Aug 2025 - Present</span>
-            <img class="w-2 h-4" src="/locationMarker.png" alt="Location" />
-            <span>Grand Rapids, MI</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Blue Nucleus -->
-      <div class="flex flex-row items-start space-x-4">
-        <div class="h-20 w-20 flex-shrink-0">
-            <img src="/gv.png"/>
-        </div>
-        <div class="flex flex-col space-y-1">
-          <div class="text-[#0a2255] font-semibold text-base md:text-lg hover:text-[#6c86bd]">
-            <a
-              href="https://www.gvsu.edu/bluenucleus/about-blue-nucleus-5.htm"
-              target="_blank"
-            >
-              Blue Nucleus
-            </a>
-          </div>
-          <div class="text-[#0a2255] text-sm md:text-base">
-            Software Developer
-          </div>
-          <div class="flex flex-row flex-wrap items-center space-x-2 text-gray-400 text-sm md:text-base">
-            <span>May 2025 - Aug 2025</span>
-            <img class="w-2 h-4" src="/locationMarker.png" alt="Location" />
-            <span>Grand Rapids, MI</span>
-          </div>
+        <div>
+          <h4 class="text-[#0a2255] font-semibold text-lg hover:text-[#6c86bd]">
+            <a :href="job.link" target="_blank">{{ job.company }}</a>
+          </h4>
+          <p class="text-[#0a2255] text-base">{{ job.role }}</p>
+          <p class="flex flex-wrap items-center space-x-2 text-gray-400 text-sm mt-1">
+            <span>{{ job.dates }}</span>
+            <img src="/locationMarker.png" alt="Location" class="w-2 h-4" />
+            <span>{{ job.location }}</span>
+          </p>
         </div>
       </div>
     </div>
 
-    <!-- Divider -->
     <div class="h-[1px] bg-gray-200"></div>
 
-    <!-- Education Section -->
-    <div class="flex flex-col space-y-6">
-      <h3 class="text-gray-400 font-sans text-sm md:text-base uppercase tracking-wide">
+    <!-- Education -->
+    <div class="flex flex-col space-y-8">
+      <h3 class="text-gray-400 uppercase tracking-wide text-sm font-semibold">
         College
       </h3>
 
-      <!-- Grand Valley State University -->
-      <div class="flex flex-row items-start space-x-4">
+      <div v-for="(edu, i) in education" :key="i" class="flex items-start space-x-4">
         <div class="h-20 w-20 flex-shrink-0">
-            <img src="/gv.png"/>
+          <img :src="edu.logo" alt="Logo" class="object-contain" />
         </div>
-        <div class="flex flex-col space-y-1">
-          <div class="text-[#0a2255] font-semibold text-base md:text-lg">
-            Grand Valley State University
-          </div>
-          <div class="text-[#0a2255] text-sm md:text-base">
-            Master of Science in Applied Computer Science
-          </div>
-          <div class="flex flex-row flex-wrap items-center space-x-2 text-gray-400 text-sm md:text-base">
-            <span>Expected Graduation: Apr 2027</span>
-            <img class="w-2 h-4" src="/locationMarker.png" alt="Location" />
-            <span>Grand Rapids, MI</span>
-          </div>
+        <div>
+          <h4 class="text-[#0a2255] font-semibold text-lg">{{ edu.school }}</h4>
+          <p class="text-[#0a2255] text-base">{{ edu.degree }}</p>
+          <p class="flex flex-wrap items-center space-x-2 text-gray-400 text-sm mt-1">
+            <span>{{ edu.dates }}</span>
+            <img src="/locationMarker.png" alt="Location" class="w-2 h-4" />
+            <span>{{ edu.location }}</span>
+          </p>
         </div>
       </div>
-
-      <!-- Western Governors University -->
-      <div class="flex flex-row items-start space-x-4">
-        <div class="h-20 w-20 flex-shrink-0">
-            <img src="/western-governors-university.png"/>
-        </div>
-        <div class="flex flex-col space-y-1">
-          <div class="text-[#0a2255] font-semibold text-base md:text-lg">
-            Western Governors University
-          </div>
-          <div class="text-[#0a2255] text-sm md:text-base">
-            Bachelor of Science in Cybersecurity
-          </div>
-          <div class="flex flex-row flex-wrap items-center space-x-2 text-gray-400 text-sm md:text-base">
-            <span>Aug 2024</span>
-            <img class="w-2 h-4" src="/locationMarker.png" alt="Location" />
-            <span>Salt Lake City, UT</span>
-          </div>
-        </div>
-      </div>
-      
     </div>
 
-    <!-- Divider -->
     <div class="h-[1px] bg-gray-200"></div>
 
-
+    <!-- Awards -->
     <div class="flex flex-col space-y-6">
-      <h3 class="text-gray-400 font-sans text-sm md:text-base uppercase tracking-wide">
-        Awards and Activities
+      <h3 class="text-gray-400 uppercase tracking-wide text-sm font-semibold">
+        Awards & Activities
       </h3>
 
-      <!-- Grand Valley State University -->
-      <div class="flex flex-row items-start space-x-4">
-        <div class="flex flex-col space-y-1">
-          <div class="text-[#0a2255] font-semibold text-base md:text-lg">
-            Excellence Awards
-          </div>
-          <div class="text-[#0a2255] text-sm md:text-base">
-            Legal Issues in Cybersecurity
-          </div>
-          <div class="text-[#0a2255] text-sm md:text-base">
-            Communications: Commutinicating with Others
-          </div>
-          <div class="flex flex-row flex-wrap items-center space-x-2 text-gray-400 text-sm md:text-base">
-            <span>Western Governors University</span>
-            <img class="w-2 h-4" src="/locationMarker.png" alt="Location" />
-            <span>Salt Lake City, UT</span>
-          </div>
-        </div>
+      <div>
+        <h4 class="text-[#0a2255] font-semibold text-lg">Excellence Awards</h4>
+        <ul class="list-disc list-inside text-[#0a2255] text-base">
+          <li>Legal Issues in Cybersecurity</li>
+          <li>Communicating with Others</li>
+        </ul>
+        <p class="flex flex-wrap items-center space-x-2 text-gray-400 text-sm mt-1">
+          <span>Western Governors University</span>
+          <img src="/locationMarker.png" alt="Location" class="w-2 h-4" />
+          <span>Salt Lake City, UT</span>
+        </p>
       </div>
-      
     </div>
 
-     <!-- Divider -->
     <div class="h-[1px] bg-gray-200"></div>
 
-
+    <!-- Certifications -->
     <div class="flex flex-col space-y-6">
-      <h3 class="text-gray-400 font-sans text-sm md:text-base uppercase tracking-wide">
+      <h3 class="text-gray-400 uppercase tracking-wide text-sm font-semibold">
         Certifications
       </h3>
 
-      <!-- Grand Valley State University -->
-      <div class="flex flex-row items-start space-x-4">
-        <div class="flex flex-row space-x-2">
-          <div class="text-[#0a2255] font-semibold text-base md:text-lg">
-            CompTIA |
-          </div>
-          <div class="text-[#0a2255] text-sm md:text-base">
-            Network + |
-          </div>
-          <div class="text-[#0a2255] text-sm md:text-base">
-            Security + |
-          </div> 
-          <div class="text-[#0a2255] text-sm md:text-base">
-            CYSA + |
-          </div>
-          <div class="text-[#0a2255] text-sm md:text-base">
-            Project + |
-          </div>
-          <div class="text-[#0a2255] text-sm md:text-base">
-            PenTest + |
-          </div>
-          <div class="text-[#0a2255] text-sm md:text-base">
-            A +
-          </div>
-        </div>
+      <div class="space-y-2">
+        <p class="text-[#0a2255] text-base">
+          <span class="font-semibold">CompTIA |</span> Network+, Security+, CYSA+, Project+, PenTest+, A+
+        </p>
+        <p class="text-[#0a2255] text-base">
+          <span class="font-semibold">(ISC)² |</span> Systems Security Certified Practitioner (SSCP)
+        </p>
+        <p class="text-[#0a2255] text-base">
+          <span class="font-semibold">ITIL |</span> v4 Foundation PeopleCert
+        </p>
+        <p class="text-[#0a2255] text-base">
+          <span class="font-semibold">Linux Professional Institute |</span> Linux Essentials Certification
+        </p>
       </div>
-
-      <div class="flex flex-row items-start space-x-4">
-        <div class="flex flex-row space-x-2">
-          <div class="text-[#0a2255] font-semibold text-base md:text-lg">
-            (ISC)2 |
-          </div>
-          <div class="text-[#0a2255] text-sm md:text-base">
-            System Security Certified Practictioner (SSCP)
-          </div>
-        </div>
-      </div>
-
-      <div class="flex flex-row items-start space-x-4">
-        <div class="flex flex-row space-x-2">
-          <div class="text-[#0a2255] font-semibold text-base md:text-lg">
-            ITIL |
-          </div>
-          <div class="text-[#0a2255] text-sm md:text-base">
-            v4 Foundation PeopleCert
-          </div>
-        </div>
-      </div>
-
-      <div class="flex flex-row items-start space-x-4">
-        <div class="flex flex-row space-x-2">
-          <div class="text-[#0a2255] font-semibold text-base md:text-lg">
-            Linux Professional Institute |
-          </div>
-          <div class="text-[#0a2255] text-sm md:text-base">
-            Linux Essentials Certification
-          </div>
-        </div>
-      </div>
-      
     </div>
 
-    <!-- Divider -->
     <div class="h-[1px] bg-gray-200"></div>
 
-    <!-- Work Experience Section -->
-    <div class="flex flex-col space-y-6">
-      <h3 class="text-gray-400 font-sans text-sm md:text-base uppercase tracking-wide">
+    <!-- Other Work -->
+    <div class="flex flex-col space-y-8">
+      <h3 class="text-gray-400 uppercase tracking-wide text-sm font-semibold">
         Other Work Experience
       </h3>
 
-      <!-- Lacrosse Coach -->
-      <div class="flex flex-row items-start space-x-4">
+      <div v-for="(exp, i) in otherWork" :key="i" class="flex items-start space-x-4">
         <div class="h-20 w-20 flex-shrink-0">
-            <img src="/haslett.png"/>
+          <img :src="exp.logo" alt="Logo" class="object-contain rounded-md" />
         </div>
-        <div class="flex flex-col space-y-1">
-          <div class="text-[#0a2255] font-semibold text-base md:text-lg">
-            Haslett High School
-          </div>
-          <div class="text-[#0a2255] text-sm md:text-base">
-            Varsity Lacrosse Coach - Offensive Coordinator
-          </div>
-          <div class="flex flex-row flex-wrap items-center space-x-2 text-gray-400 text-sm md:text-base">
-            <span>Jun 2022 - Aug 2024</span>
-            <img class="w-2 h-4" src="/locationMarker.png" alt="Location" />
-            <span>Haslett, MI</span>
-          </div>
+        <div>
+          <h4 class="text-[#0a2255] font-semibold text-lg">{{ exp.company }}</h4>
+          <p class="text-[#0a2255] text-base">{{ exp.role }}</p>
+          <p class="flex flex-wrap items-center space-x-2 text-gray-400 text-sm mt-1">
+            <span>{{ exp.dates }}</span>
+            <img src="/locationMarker.png" alt="Location" class="w-2 h-4" />
+            <span>{{ exp.location }}</span>
+          </p>
         </div>
       </div>
-
-       <!-- Social Media Manager -->
-      <div class="flex flex-row items-start space-x-4">
-        <div class="h-20 w-20 flex-shrink-0">
-            <img src="/haslett.png"/>
-        </div>
-        <div class="flex flex-col space-y-1">
-          <div class="text-[#0a2255] font-semibold text-base md:text-lg">
-            Haslett High School
-          </div>
-          <div class="text-[#0a2255] text-sm md:text-base">
-            Varsity Lacrosse - Social Media Manager
-          </div>
-          <div class="flex flex-row flex-wrap items-center space-x-2 text-gray-400 text-sm md:text-base">
-            <span>Jun 2022 - Aug 2024</span>
-            <img class="w-2 h-4" src="/locationMarker.png" alt="Location" />
-            <span>Haslett, MI</span>
-          </div>
-        </div>
-      </div>
-
-       <!-- Social Media Manager -->
-      <div class="flex flex-row items-start space-x-4">
-        <div class="flex-shrink-0">
-            <img src="/ms.png" class="h-20 w-20 rounded-full"/>
-        </div>
-        <div class="flex flex-col space-y-1">
-          <div class="text-[#0a2255] font-semibold text-base md:text-lg">
-            Mona Shores High School
-          </div>
-          <div class="text-[#0a2255] text-sm md:text-base">
-            Varsity Lacrosse - Graphic Designer
-          </div>
-          <div class="flex flex-row flex-wrap items-center space-x-2 text-gray-400 text-sm md:text-base">
-            <span>Jun 2024 - Jun 2025</span>
-            <img class="w-2 h-4" src="/locationMarker.png" alt="Location" />
-            <span>Mona Shores, MI</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- OPS Child Care -->
-      <div class="flex flex-row items-start space-x-4">
-        <div class="h-20 w-20 flex-shrink-0">
-            <img src="/ops.png"/>
-        </div>
-        <div class="flex flex-col space-y-1">
-          <div class="text-[#0a2255] font-semibold text-base md:text-lg">
-            Okemos Public Schools
-          </div>
-          <div class="text-[#0a2255] text-sm md:text-base">
-            Child Care Assistant
-          </div>
-          <div class="flex flex-row flex-wrap items-center space-x-2 text-gray-400 text-sm md:text-base">
-            <span>Jul 2022 - Jan 2023</span>
-            <img class="w-2 h-4" src="/locationMarker.png" alt="Location" />
-            <span>Okemos, MI</span>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
+  </Appear>
 </template>
+
+<script setup>
+const jobs = [
+  {
+    company: "Edge Forestry",
+    role: "Software Developer",
+    dates: "Aug 2025 - Present",
+    location: "Grand Rapids, MI",
+    logo: "/leaves.png",
+    link: "https://edgeforestry.com/"
+  },
+  {
+    company: "Blue Nucleus",
+    role: "Software Developer",
+    dates: "May 2025 - Aug 2025",
+    location: "Grand Rapids, MI",
+    logo: "/gv.png",
+    link: "https://www.gvsu.edu/bluenucleus/about-blue-nucleus-5.htm"
+  }
+]
+
+const education = [
+  {
+    school: "Grand Valley State University",
+    degree: "Master of Science in Applied Computer Science",
+    dates: "Expected Graduation: Apr 2027",
+    location: "Grand Rapids, MI",
+    logo: "/gv.png"
+  },
+  {
+    school: "Western Governors University",
+    degree: "Bachelor of Science in Cybersecurity",
+    dates: "Aug 2024",
+    location: "Salt Lake City, UT",
+    logo: "/western-governors-university.png"
+  }
+]
+
+const otherWork = [
+  {
+    company: "Haslett High School",
+    role: "Varsity Lacrosse Coach - Offensive Coordinator",
+    dates: "Jun 2022 - Aug 2024",
+    location: "Haslett, MI",
+    logo: "/haslett.png"
+  },
+  {
+    company: "Haslett High School",
+    role: "Varsity Lacrosse - Social Media Manager",
+    dates: "Jun 2022 - Aug 2024",
+    location: "Haslett, MI",
+    logo: "/haslett.png"
+  },
+  {
+    company: "Mona Shores High School",
+    role: "Varsity Lacrosse - Graphic Designer",
+    dates: "Jun 2024 - Jun 2025",
+    location: "Mona Shores, MI",
+    logo: "/ms.png"
+  },
+  {
+    company: "Okemos Public Schools",
+    role: "Child Care Assistant",
+    dates: "Jul 2022 - Jan 2023",
+    location: "Okemos, MI",
+    logo: "/ops.png"
+  }
+]
+</script>
 
 <style scoped>
 img {
