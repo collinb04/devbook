@@ -8,14 +8,14 @@
         :key="link.path"
         :to="link.path"
         class="px-4 py-2 text-[#0a2255] text-base font-semibold transition hover:text-[#6c86bd]"
-        :class="route.path === link.path ? 'bg-[#e7f3ff] font-bold' : 'bg-white'"
+        :class="route.path === link.path ? 'bg-[#e7f3ff] rounded-lg font-bold' : 'bg-white'"
       >
         {{ link.name }}
       </NuxtLink>
     </nav>
 
     <!-- Daily Quote Box -->
-    <div class="bg-[#e7f3ff] text-[#0a2255] font-medium px-2 py-4 w-full mt-2">
+    <div class="bg-[#e7f3ff] text-[#0a2255] font-medium px-2 py-4 w-full mt-2 rounded-lg">
       <div class="text-[#0a2255] font-bold mb-1">
         Daily Quote
       </div>

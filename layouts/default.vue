@@ -33,7 +33,7 @@
         <!-- Left Sidebar: Sticky -->
         <div class="flex flex-col items-center md:items-start md:sticky md:top-[104px]">
         <!-- Profile Image -->
-        <div class="flex-shrink-0 w-48 h-40 md:w-72 md:h-64 overflow-hidden border-8 border-[#3b5998]">
+        <div class="flex-shrink-0 w-48 h-40 md:w-72 md:h-64 overflow-hidden rounded-lg border-8 border-[#3b5998]">
             <img
             src="/me.jpeg"
             alt="Collin Brennan"
@@ -59,33 +59,33 @@
 <aside class="hidden lg:flex flex-col md:sticky md:top-[104px] items-start w-64 space-y-4">
 
   <!-- Social Buttons -->
-  <div class="bg-white p-4 w-full space-y-3 shadow-sm border border-gray-200">
+  <div class="bg-white p-4 w-full space-y-3 shadow-sm rounded-lg border border-gray-200">
     <h3 class="text-[#0a2255] font-semibold text-xl mb-2">Connect</h3>
 
     <a
       href="https://linkedin.com/in/colbren04"
       target="_blank"
-      class="flex items-center space-x-3 text-[#0a2255] font-semibold py-2 px-2 hover:bg-[#e7f3ff] transition"
+      class="flex items-center space-x-3 text-[#0a2255] font-semibold py-2 px-2 rounded-lg hover:bg-[#e7f3ff] transition"
     >
-      <img src="/linkedin2.png" alt="LinkedIn" class="bg-[#3b5998] w-10 h-10" />
+      <img src="/linkedin2.png" alt="LinkedIn" class="bg-[#3b5998] rounded-lg w-10 h-10" />
       <span>LinkedIn</span>
     </a>
 
     <a
       href="https://github.com/collinb04"
       target="_blank"
-      class="flex items-center space-x-3 text-[#0a2255] font-semibold py-2 px-2 hover:bg-[#e7f3ff] transition"
+      class="flex items-center space-x-3 text-[#0a2255] font-semibold py-2 px-2 rounded-lg hover:bg-[#e7f3ff] transition"
     >
-      <img src="/github.png" alt="GitHub" class="bg-[#3b5998] w-10 h-10" />
+      <img src="/github.png" alt="GitHub" class="bg-[#3b5998] rounded-lg w-10 h-10" />
       <span>GitHub</span>
     </a>
 
     <a
       href="/resume.pdf"
       download
-      class="flex items-center space-x-3 text-[#0a2255] font-semibold py-2 px-2 hover:bg-[#e7f3ff] transition"
+      class="flex items-center space-x-3 text-[#0a2255] font-semibold py-2 px-2 rounded-lg hover:bg-[#e7f3ff] transition"
     >
-      <img src="/res (1).png" alt="Resume" class="bg-[#3b5998] w-10 h-10" />
+      <img src="/res (1).png" alt="Resume" class="bg-[#3b5998] rounded-lg w-10 h-10" />
       <span>Resume</span>
     </a>
   </div>

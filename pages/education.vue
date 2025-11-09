@@ -14,7 +14,7 @@
     <!-- Work Experience Section -->
     <div class="flex flex-col space-y-6">
       <h3 class="text-gray-400 font-sans text-sm md:text-base uppercase tracking-wide">
-        Employers
+        Experience
       </h3>
 
       <!-- Edge Forestry -->
@@ -23,8 +23,13 @@
             <img src="/leaves.png"/>
         </div>
         <div class="flex flex-col space-y-1">
-          <div class="text-[#0a2255] font-semibold text-base md:text-lg">
+          <div class="text-[#0a2255] font-semibold text-base md:text-lg hover:text-[#6c86bd]">
+            <a
+              href="https://edgeforestry.com/"
+              target="_blank"
+            >
             Edge Forestry
+            </a>
           </div>
           <div class="text-[#0a2255] text-sm md:text-base">
             Software Developer
@@ -43,8 +48,13 @@
             <img src="/gv.png"/>
         </div>
         <div class="flex flex-col space-y-1">
-          <div class="text-[#0a2255] font-semibold text-base md:text-lg">
-            Blue Nucleus
+          <div class="text-[#0a2255] font-semibold text-base md:text-lg hover:text-[#6c86bd]">
+            <a
+              href="https://www.gvsu.edu/bluenucleus/about-blue-nucleus-5.htm"
+              target="_blank"
+            >
+              Blue Nucleus
+            </a>
           </div>
           <div class="text-[#0a2255] text-sm md:text-base">
             Software Developer
