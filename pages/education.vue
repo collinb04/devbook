@@ -1,9 +1,12 @@
 <template>
   <section class="flex flex-col space-y-8">
     <!-- Page Header -->
-    <h2 class="text-2xl md:text-3xl font-bold text-[#0a2255]">
-      Education & Work
-    </h2>
+     
+    <!-- <div class="h-10 bg-[#e7f3ff]"> -->
+        <h2 class="text-2xl md:text-3xl font-bold text-[#0a2255] ml-1">
+        Education & Work
+        </h2>
+    <!-- </div> -->
 
     <!-- Divider -->
     <div class="h-[1px] bg-gray-200"></div>
