@@ -6,7 +6,7 @@
     <div class="border border-gray-300 bg-white px-6 py-4 shadow-sm">
       <h1 class="text-2xl font-bold mb-1">Projects Feed</h1>
       <p class="text-sm text-gray-600">
-        A collection of my software development work — in a style that feels like the old Facebook feed.
+        A collection of my software development work.
       </p>
     </div>
 
@@ -21,7 +21,6 @@
         </div>
         <div>
           <h3 class="font-semibold text-lg">{{ project.name }}</h3>
-          <p class="text-xs text-gray-600">Updated recently</p>
         </div>
       </div>
 
@@ -43,7 +42,7 @@
           <p>{{ project.description }}</p>
 
           <div v-if="project.technologies" class="mt-3 text-sm">
-            <span class="font-semibold">Tech Stack:</span>
+            <span class="font-semibold">Tech Stack: </span>
             <span>{{ project.technologies.join(', ') }}</span>
           </div>
 
@@ -89,31 +88,38 @@ const truncateText = (text, length) =>
 
 const projects = [
   {
-    name: "DSA Visualizer",
+    name: "Brix",
     description:
-      "A web app that visually demonstrates algorithms and data structures with interactive animations and topic connections — built with Vue, Python, and FastAPI. It’s like an Obsidian-style learning map for mastering algorithms step by step, designed for developers who learn visually and structurally.",
-    technologies: ["Vue", "FastAPI", "Python", "Tailwind"],
-    link: "#",
-  },
-  {
-    name: "Balatro Lite",
-    description:
-      "A Python-based card game merging poker logic and deckbuilding. Built with full OOP design principles and advanced scoring logic to mimic poker hands while tracking player progress. Future goal: add a frontend simulation in React.",
-    technologies: ["Python", "OOP", "Flask"],
-    link: "#",
-  },
-  {
-    name: "Personality Test SaaS",
-    description:
-      "A career guidance platform powered by machine learning and feedback loops to generate personalized career roadmaps and match users with ideal mentors or coaches. It learns from user feedback to refine predictions over time.",
+      "Brix Learning Platform is an interactive, modular learning ecosystem designed to help learners master concepts in a structured, engaging, and personalized way. The platform breaks knowledge into “bricks” — bite-sized, interconnected learning units that can be explored independently or as part of a coherent learning path. Each brick can include explanations, examples, exercises, and multimedia content like videos, diagrams, and interactive simulations.",
     technologies: ["FastAPI", "Vue", "PyTorch", "PostgreSQL"],
     link: "#",
   },
   {
-    name: "Edge Forestry",
+  name: "Cinematch",
+  description:
+    "A web app that allows the user to filter by genre, year, ratings, streaming service, and more. Built to help cinema lovers find better movies faster.",
+  technologies: ["Vue", "FastAPI", "Python", "Tailwind"],
+  link: "#",
+  },
+  {
+  name: "Edge Forestry Web App",
+  description:
+    "A forestry disease mitigation platform using PyTorch and Flask to predict and visualize disease spread based on drone imagery. Focused on real-time inference and intuitive UX for researchers and foresters.",
+  technologies: ["Vue", "Flask", "PyTorch", "AWS"],
+  link: "https://edgeforestry.com/",
+  },
+  {
+    name: "Edge Forestry Mobile Device and Software",
     description:
-      "A forestry disease mitigation platform using PyTorch and Flask to predict and visualize disease spread based on satellite imagery and sensor data. Focused on real-time inference and intuitive UX for researchers and foresters.",
-    technologies: ["Flask", "PyTorch", "AWS"],
+      "A raspberry pi device made for offline use that utilizes two different disease models to predict disease probability. This device focuses heavily on ease of use for foresters with features like kiosk mode, usb watching, and results in under two touches.",
+    technologies: ["Flutter", "Flask", "PyTorch", "Raspberry Pi"],
+    link: "#",
+  },
+  {
+    name: "Refract",
+    description:
+      "Refract is a productivity and focus platform designed to help users optimize their attention, energy, and output in a structured, adaptive way. It blends behavioral science, technology, and habit formation into a sleek, user-centric experience.",
+    technologies: ["Flask", "Nuxt 3"],
     link: "#",
   },
 ]

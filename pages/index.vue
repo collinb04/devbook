@@ -23,7 +23,7 @@
 
         <p class="text-gray-700 leading-relaxed">
           I’m a Computer Science student with experience in software development across the full stack. 
-          I have a strong infatuation with the intersection of education and technology — specifically information abstraction 
+          I have a strong infatuation with the intersection of education and technology, specifically information abstraction 
           and the use of AI to promote growth rather than learning atrophy. 
         </p>
         <p class="text-gray-700 leading-relaxed mt-3">
@@ -43,10 +43,9 @@
         <ul class="list-disc list-inside text-gray-700 space-y-1">
           <li>Software development and system design</li>
           <li>Entrepreneurship and product building</li>
-          <li>Data structures, algorithms, and visualization</li>
           <li>Psychology and human behavior</li>
-          <li>Sports, fitness, and cinematography</li>
-          <li>Exploring new places and spending time in nature</li>
+          <li>Education and Learning Strategies</li>
+          <li>Sports, fitness, music, and cinematography</li>
         </ul>
       </section>
 
@@ -59,7 +58,7 @@
         </h3>
         <p class="text-gray-700 leading-relaxed">
           My goal is to build technology-driven systems that enable people to learn, grow, and make confident decisions.
-          I aim to merge technical precision with psychological understanding — from learning tools and mentorship
+          I aim to merge technical precision with psychological understanding, from learning tools and mentorship
           platforms to SaaS products that truly solve human-centered problems.
         </p>
         <p class="text-gray-700 leading-relaxed mt-3">
