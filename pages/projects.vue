@@ -5,9 +5,6 @@
     <!-- Header -->
     <div class="border border-gray-300 bg-white px-6 py-4 shadow-sm">
       <h1 class="text-2xl font-bold mb-1">Projects Feed</h1>
-      <p class="text-sm text-gray-600">
-        A collection of my software development work.
-      </p>
     </div>
 
     <!-- Project Feed -->
@@ -88,23 +85,9 @@ const truncateText = (text, length) =>
 
 const projects = [
   {
-    name: "Brix",
-    description:
-      "Brix Learning Platform is an interactive, modular learning ecosystem designed to help learners master concepts in a structured, engaging, and personalized way. The platform breaks knowledge into “bricks” — bite-sized, interconnected learning units that can be explored independently or as part of a coherent learning path. Each brick can include explanations, examples, exercises, and multimedia content like videos, diagrams, and interactive simulations.",
-    technologies: ["FastAPI", "Vue", "PyTorch", "PostgreSQL"],
-    link: "#",
-  },
-  {
-  name: "Cinematch",
-  description:
-    "A web app that allows the user to filter by genre, year, ratings, streaming service, and more. Built to help cinema lovers find better movies faster.",
-  technologies: ["Vue", "FastAPI", "Python", "Tailwind"],
-  link: "#",
-  },
-  {
   name: "Edge Forestry Web App",
   description:
-    "A forestry disease mitigation platform using PyTorch and Flask to predict and visualize disease spread based on drone imagery. Focused on real-time inference and intuitive UX for researchers and foresters.",
+    "A forestry disease mitigation platform using PyTorch and Flask to predict and visualize disease spread based on drone imagery. Focused on real-time inference and intuitive UX for researchers and foresters. (This code is private to Edge Forestry)",
   technologies: ["Vue", "Flask", "PyTorch", "AWS"],
   link: "https://edgeforestry.com/",
   },
@@ -113,7 +96,7 @@ const projects = [
     description:
       "A raspberry pi device made for offline use that utilizes two different disease models to predict disease probability. This device focuses heavily on ease of use for foresters with features like kiosk mode, usb watching, and results in under two touches.",
     technologies: ["Flutter", "Flask", "PyTorch", "Raspberry Pi"],
-    link: "#",
+    link: "https://github.com/collinb04/rasp-pi-flutter-app",
   },
   {
     name: "Refract",

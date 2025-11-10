@@ -35,8 +35,7 @@
     <!-- Main Content Area -->
     <div class="flex flex-col md:flex-row items-start md:ml-10 mt-10 md:space-x-8 px-4">
       <!-- Left Sidebar: Sticky -->
-      <div class="flex flex-col items-center md:items-start md:sticky md:top-[104px]">
-        <!-- Profile Image -->
+      <div class="flex flex-col items-center md:items-start md:sticky md:top-[104px] w-full md:w-auto">
         <div class="flex-shrink-0 w-48 h-40 md:w-72 md:h-64 overflow-hidden rounded-lg border-8 border-[#3b5998]">
           <img
             src="/me.jpeg"
@@ -60,7 +59,7 @@
         </div>
 
         <!-- Vertical NavBar -->
-        <NavBarColumn />
+        <NavBarColumn class="mb-5" />
       </div>
 
       <!-- Right Column: Page Content -->

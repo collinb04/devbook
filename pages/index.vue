@@ -6,10 +6,7 @@
     <main class="flex-1 p-10 space-y-10 overflow-y-auto">
       <!-- Header -->
         <div class="border border-gray-300 bg-white px-6 py-4 shadow-sm">
-        <h1 class="text-2xl font-bold mb-1">Home</h1>
-        <p class="text-sm text-gray-600">
-            A collection of information about myself, interests, and goals.
-        </p>
+        <h1 class="text-2xl font-bold mb-1 text-[#0a2255]">Home</h1>
         </div>
     
       <!-- Bio -->

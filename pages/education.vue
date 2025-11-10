@@ -3,10 +3,7 @@
   <section class="flex flex-col space-y-10 rounded-lg bg-[#f7f9fc] p-8 font-[Lucida_Grande]">
     <!-- Header -->
     <div class="border border-gray-300 bg-white px-6 py-4 shadow-sm">
-      <h1 class="text-2xl font-bold mb-1">Education & Work Experience</h1>
-      <p class="text-sm text-gray-600">
-        A collection of my current and past work experiences/education.
-      </p>
+      <h1 class="text-2xl font-bold text-[#0a2255] mb-1">Education & Work Experience</h1>
     </div>
 
     <div class="h-[1px] bg-gray-200"></div>
