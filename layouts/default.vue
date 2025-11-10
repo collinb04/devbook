@@ -131,12 +131,11 @@
           <div class="text-[#0a2255] font-bold mb-1">
             Daily Quote
           </div>
-          <p class="text-sm">
-            "When you grow up, you tend to get told that the world is the way it is, 
-            and your life is just to live your life inside the world. Try not to bash into the walls too much. 
-            Try to have a nice family life. Have fun, save a little money. That's a very limited life. 
-            Life can be much broader, once you discover one simple fact, and that is everything around that you call life was made up by people who were no smarter than you. 
-            And you can change it. You can influence it. You can build your own things that other people can use." - Steve Jobs
+          <p v-if="loadingQuote" class="text-sm">Loading...</p>
+          <p v-else-if="quoteError" class="text-sm">{{ quoteError }}</p>
+          <p v-else class="text-sm">
+            "{{ dailyQuote.quote }}" 
+            <span v-if="dailyQuote.author" class="block mt-2 text-left">- {{ dailyQuote.author }}</span>
           </p>
         </div>
       </aside>
@@ -147,7 +146,7 @@
 </template>
 
 <script setup>
-import { ref, watch, nextTick } from 'vue'
+import { ref, watch, nextTick, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import NavBarColumn from '~/components/NavBarColumn.vue'
 import Footer from '~/components/Footer.vue'
@@ -155,11 +154,47 @@ import Footer from '~/components/Footer.vue'
 const route = useRoute()
 const scrollContainer = ref(null)
 const mobileMenuOpen = ref(false)
+const dailyQuote = ref({ quote: '', author: '' })
 
 const links = [
   { name: 'Home', path: '/' },
   { name: 'Education & Work', path: '/education' },
   { name: 'Projects & Skills', path: '/projects' },
+]
+
+// Curated entrepreneurship/motivational quotes
+const quotes = [
+  { quote: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+  { quote: "Innovation distinguishes between a leader and a follower.", author: "Steve Jobs" },
+  { quote: "Your time is limited, don't waste it living someone else's life.", author: "Steve Jobs" },
+  { quote: "The biggest risk is not taking any risk. In a world that's changing really quickly, the only strategy that is guaranteed to fail is not taking risks.", author: "Mark Zuckerberg" },
+  { quote: "Ideas are easy. Implementation is hard.", author: "Guy Kawasaki" },
+  { quote: "Don't worry about failure; you only have to be right once.", author: "Drew Houston" },
+  { quote: "If you are not embarrassed by the first version of your product, you've launched too late.", author: "Reid Hoffman" },
+  { quote: "The way to get started is to quit talking and begin doing.", author: "Walt Disney" },
+  { quote: "Success is not final; failure is not fatal: It is the courage to continue that counts.", author: "Winston Churchill" },
+  { quote: "It's fine to celebrate success, but it is more important to heed the lessons of failure.", author: "Bill Gates" },
+  { quote: "Don't be afraid to give up the good to go for the great.", author: "John D. Rockefeller" },
+  { quote: "I find that the harder I work, the more luck I seem to have.", author: "Thomas Jefferson" },
+  { quote: "Success usually comes to those who are too busy to be looking for it.", author: "Henry David Thoreau" },
+  { quote: "The road to success and the road to failure are almost exactly the same.", author: "Colin R. Davis" },
+  { quote: "Opportunities don't happen. You create them.", author: "Chris Grosser" },
+  { quote: "Don't let yesterday take up too much of today.", author: "Will Rogers" },
+  { quote: "You learn more from failure than from success. Don't let it stop you. Failure builds character.", author: "Unknown" },
+  { quote: "If you really look closely, most overnight successes took a long time.", author: "Steve Jobs" },
+  { quote: "The secret of success is to do the common thing uncommonly well.", author: "John D. Rockefeller Jr." },
+  { quote: "I owe my success to having listened respectfully to the very best advice, and then going away and doing the exact opposite.", author: "G.K. Chesterton" },
+  { quote: "Success is walking from failure to failure with no loss of enthusiasm.", author: "Winston Churchill" },
+  { quote: "Just when the caterpillar thought the world was ending, he turned into a butterfly.", author: "Proverb" },
+  { quote: "Successful entrepreneurs are givers and not takers of positive energy.", author: "Anonymous" },
+  { quote: "Whenever you see a successful person, you only see the public glories, never the private sacrifices to reach them.", author: "Vaibhav Shah" },
+  { quote: "Try not to become a person of success, but rather try to become a person of value.", author: "Albert Einstein" },
+  { quote: "It is not the strongest of the species that survive, nor the most intelligent, but the one most responsive to change.", author: "Charles Darwin" },
+  { quote: "Great things never come from comfort zones.", author: "Anonymous" },
+  { quote: "Dream bigger. Do bigger.", author: "Anonymous" },
+  { quote: "Don't stop when you're tired. Stop when you're done.", author: "Anonymous" },
+  { quote: "Wake up with determination. Go to bed with satisfaction.", author: "Anonymous" },
+  { quote: "Do something today that your future self will thank you for.", author: "Anonymous" }
 ]
 
 function scrollToTop() {
@@ -170,6 +205,19 @@ function scrollToTop() {
   }
 }
 
+// Get quote based on day of year (changes daily)
+function getDailyQuote() {
+  const now = new Date()
+  const start = new Date(now.getFullYear(), 0, 0)
+  const diff = now - start
+  const oneDay = 1000 * 60 * 60 * 24
+  const dayOfYear = Math.floor(diff / oneDay)
+  
+  // Use day of year to pick a quote (same quote all day)
+  const index = dayOfYear % quotes.length
+  dailyQuote.value = quotes[index]
+}
+
 // Watch for route changes and scroll to top
 watch(() => route.path, async () => {
   await nextTick()
@@ -177,6 +225,11 @@ watch(() => route.path, async () => {
     scrollContainer.value.scrollTo({ top: 0, behavior: 'smooth' })
   }
   mobileMenuOpen.value = false
+})
+
+// Set daily quote on mount
+onMounted(() => {
+  getDailyQuote()
 })
 </script>
 
