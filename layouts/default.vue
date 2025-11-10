@@ -7,7 +7,7 @@
         <!-- Left side (logo / brand) -->
         <div class="flex items-center space-x-2">
           <button 
-            class="text-white text-2xl font-bold font-sans tracking-tight ml-10 hover:scale-105 transition"
+            class="text-white text-2xl font-bold font-sans tracking-tight ml-4 md:ml-10 hover:scale-105 transition"
             @click.prevent="scrollToTop"
           >
             collinbook
@@ -29,7 +29,7 @@
 
       <!-- Secondary Light Blue Bar -->
       <div class="bg-[#e7f3ff] h-8 w-full shadow-inner flex items-center px-6">
-        <p class="text-[#3b5998] font-medium ml-10">
+        <p class="text-[#3b5998] font-medium md:ml-10">
           Welcome to collinbook — my personal profile feed!
         </p>
       </div>
