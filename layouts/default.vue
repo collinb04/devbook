@@ -15,11 +15,14 @@
         </div>
 
         <!-- Mobile menu button -->
-        <button class="text-white focus:outline-none md:hidden">
+        <button 
+          class="text-white focus:outline-none md:hidden"
+          @click.stop="mobileMenuOpen = !mobileMenuOpen"
+        >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
             viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16" />
+              :d="mobileMenuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'" />
           </svg>
         </button>
       </nav>
@@ -29,6 +32,25 @@
         <p class="text-[#3b5998] font-medium ml-10">
           Welcome to collinbook — my personal profile feed!
         </p>
+      </div>
+
+      <!-- Mobile Menu Dropdown -->
+      <div 
+        v-show="mobileMenuOpen"
+        class="md:hidden bg-white shadow-lg"
+      >
+        <nav class="flex flex-col p-4">
+          <NuxtLink
+            v-for="link in links"
+            :key="link.path"
+            :to="link.path"
+            class="px-4 py-2 text-[#0a2255] text-base font-semibold transition hover:text-[#6c86bd]"
+            :class="route.path === link.path ? 'bg-[#e7f3ff] rounded-lg font-bold' : 'bg-white'"
+            @click="mobileMenuOpen = false"
+          >
+            {{ link.name }}
+          </NuxtLink>
+        </nav>
       </div>
     </div>
 
@@ -47,6 +69,20 @@
         <h2 class="text-xl md:text-2xl font-semibold font-sans text-[#0a2255] mt-3">
           Collin Brennan
         </h2>
+
+        <div class="flex flex-row lg:hidden">
+          <a href="https://linkedin.com/in/colbren04" target="_blank" class="flex items-center space-x-3 text-[#0a2255] font-semibold py-2 px-2 rounded-lg hover:bg-[#e7f3ff] transition">
+            <img src="/linkedin2.png" alt="LinkedIn" class="bg-[#3b5998] rounded-lg w-10 h-10" />
+          </a>
+
+          <a href="https://github.com/collinb04" target="_blank" class="flex items-center space-x-3 text-[#0a2255] font-semibold py-2 px-2 rounded-lg hover:bg-[#e7f3ff] transition">
+            <img src="/github.png" alt="GitHub" class="bg-[#3b5998] rounded-lg w-10 h-10" />
+          </a>
+
+          <a href="/resume.pdf" download class="flex items-center space-x-3 text-[#0a2255] font-semibold py-2 px-2 rounded-lg hover:bg-[#e7f3ff] transition">
+            <img src="/res (1).png" alt="Resume" class="bg-[#3b5998] rounded-lg w-10 h-10" />
+          </a>
+        </div>
 
         <p class="text-md font-semibold text-[#37507e] mt-1">
           Software Developer & CS Master's Student
@@ -74,31 +110,19 @@
         <div class="bg-white p-4 w-full space-y-3 shadow-sm rounded-lg border border-gray-200">
           <h3 class="text-[#0a2255] font-semibold text-xl mb-2">Connect</h3>
 
-          <a
-            href="https://linkedin.com/in/colbren04"
-            target="_blank"
-            class="flex items-center space-x-3 text-[#0a2255] font-semibold py-2 px-2 rounded-lg hover:bg-[#e7f3ff] transition"
-          >
+          <a href="https://linkedin.com/in/colbren04" target="_blank" class="flex items-center space-x-3 text-[#0a2255] font-semibold py-2 px-2 rounded-lg hover:bg-[#e7f3ff] transition">
             <img src="/linkedin2.png" alt="LinkedIn" class="bg-[#3b5998] rounded-lg w-10 h-10" />
-            <span>LinkedIn</span>
+            <span class="truncate max-w-[120px] block">LinkedIn</span>
           </a>
 
-          <a
-            href="https://github.com/collinb04"
-            target="_blank"
-            class="flex items-center space-x-3 text-[#0a2255] font-semibold py-2 px-2 rounded-lg hover:bg-[#e7f3ff] transition"
-          >
+          <a href="https://github.com/collinb04" target="_blank" class="flex items-center space-x-3 text-[#0a2255] font-semibold py-2 px-2 rounded-lg hover:bg-[#e7f3ff] transition">
             <img src="/github.png" alt="GitHub" class="bg-[#3b5998] rounded-lg w-10 h-10" />
-            <span>GitHub</span>
+            <span class="truncate max-w-[120px] block">GitHub</span>
           </a>
 
-          <a
-            href="/resume.pdf"
-            download
-            class="flex items-center space-x-3 text-[#0a2255] font-semibold py-2 px-2 rounded-lg hover:bg-[#e7f3ff] transition"
-          >
+          <a href="/resume.pdf" download class="flex items-center space-x-3 text-[#0a2255] font-semibold py-2 px-2 rounded-lg hover:bg-[#e7f3ff] transition">
             <img src="/res (1).png" alt="Resume" class="bg-[#3b5998] rounded-lg w-10 h-10" />
-            <span>Resume</span>
+            <span class="truncate max-w-[120px] block">Resume</span>
           </a>
         </div>
 
@@ -107,13 +131,13 @@
           <div class="text-[#0a2255] font-bold mb-1">
             Daily Quote
           </div>
-          <text class="text-sm">
+          <p class="text-sm">
             "When you grow up, you tend to get told that the world is the way it is, 
             and your life is just to live your life inside the world. Try not to bash into the walls too much. 
             Try to have a nice family life. Have fun, save a little money. That's a very limited life. 
             Life can be much broader, once you discover one simple fact, and that is everything around that you call life was made up by people who were no smarter than you. 
             And you can change it. You can influence it. You can build your own things that other people can use." - Steve Jobs
-          </text>
+          </p>
         </div>
       </aside>
     </div>
@@ -123,12 +147,20 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch, nextTick } from 'vue'
+import { useRoute } from 'vue-router'
 import NavBarColumn from '~/components/NavBarColumn.vue'
 import Footer from '~/components/Footer.vue'
-import Appear from '~/components/Appear.vue'
 
+const route = useRoute()
 const scrollContainer = ref(null)
+const mobileMenuOpen = ref(false)
+
+const links = [
+  { name: 'Home', path: '/' },
+  { name: 'Education & Work', path: '/education' },
+  { name: 'Projects & Skills', path: '/projects' },
+]
 
 function scrollToTop() {
   if (scrollContainer.value) {
@@ -137,6 +169,15 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 }
+
+// Watch for route changes and scroll to top
+watch(() => route.path, async () => {
+  await nextTick()
+  if (scrollContainer.value) {
+    scrollContainer.value.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+  mobileMenuOpen.value = false
+})
 </script>
 
 <style scoped>
