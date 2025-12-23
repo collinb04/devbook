@@ -134,29 +134,14 @@ const jobs = [
   {
     company: "Edge Forestry",
     role: "Software Developer",
-    dates: "Aug 2025 - Present",
+    dates: "May 2025 - Present",
     location: "Grand Rapids, MI",
     logo: "/leaves.png",
     link: "https://edgeforestry.com/"
   },
-  {
-    company: "Blue Nucleus",
-    role: "Software Developer",
-    dates: "May 2025 - Aug 2025",
-    location: "Grand Rapids, MI",
-    logo: "/gv.png",
-    link: "https://www.gvsu.edu/bluenucleus/about-blue-nucleus-5.htm"
-  }
 ]
 
 const education = [
-  {
-    school: "Grand Valley State University",
-    degree: "Master of Science in Applied Computer Science",
-    dates: "Expected Graduation: Apr 2027",
-    location: "Grand Rapids, MI",
-    logo: "/gv.png"
-  },
   {
     school: "Western Governors University",
     degree: "Bachelor of Science in Cybersecurity",

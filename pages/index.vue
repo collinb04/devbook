@@ -19,13 +19,14 @@
         </h3>
 
         <p class="text-gray-700 leading-relaxed">
-          I’m a Computer Science student with experience in software development across the full stack. 
+          I’m a software engineer and avid learner in the realm of technology, business, and cognitive science.
           I have a strong infatuation with the intersection of education and technology, specifically information abstraction 
           and the use of AI to promote growth rather than learning atrophy. 
         </p>
         <p class="text-gray-700 leading-relaxed mt-3">
           I currently work for an AI startup specializing in forestry disease mitigation, 
-          where I integrate PyTorch models into production systems to create seamless and effective user experiences.
+          where I integrate PyTorch models into production systems, build mobile and web appliciations, 
+          and work with clients to create seamless and effective user experiences.
         </p>
       </section>
 

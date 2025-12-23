@@ -29,7 +29,7 @@
 
       <!-- Secondary Light Blue Bar -->
       <div class="bg-[#e7f3ff] h-8 w-full shadow-inner flex items-center px-6">
-        <p class="text-[#3b5998] font-medium md:ml-10">
+        <p class="text-[#3b5998] font-medium ml-10">
           Welcome to collinbook — my personal profile feed!
         </p>
       </div>
@@ -85,13 +85,13 @@
         </div>
 
         <p class="text-md font-semibold text-[#37507e] mt-1">
-          Software Developer & CS Master's Student
+          Software Engineer
         </p>
         <div class="mt-2 text-sm text-gray-600">
-          Grand Valley State University • Michigan, USA
+          Grand Rapids • Michigan, USA
         </div>
         <div class="mt-2 text-sm text-gray-600">
-          brenncol@mail.gvsu.edu
+          colbren04@gmail.com
         </div>
 
         <!-- Vertical NavBar -->
