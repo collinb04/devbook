@@ -99,11 +99,11 @@ const projects = [
     link: "https://github.com/collinb04/rasp-pi-flutter-app",
   },
   {
-    name: "Refract",
+    name: "PhysioLens",
     description:
-      "Refract is a productivity and focus platform designed to help users optimize their attention, energy, and output in a structured, adaptive way. It blends behavioral science, technology, and habit formation into a sleek, user-centric experience.",
-    technologies: ["Flask", "Nuxt 3"],
-    link: "#",
+      "PhysioLens is a health and wellness aggregator app that uses anomaly detection and advanced statistics to associate factors like nutrition, sleep, and exercise with dips in recovery.",
+    technologies: ["FastAPI", "Nuxt 3"],
+    link: "https://github.com/collinb04",
   },
 ]
 </script>
