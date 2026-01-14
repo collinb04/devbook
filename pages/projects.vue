@@ -103,7 +103,7 @@ const projects = [
     description:
       "PhysioLens is a health and wellness aggregator app that uses anomaly detection and advanced statistics to associate factors like nutrition, sleep, and exercise with dips in recovery.",
     technologies: ["FastAPI", "Nuxt 3"],
-    link: "https://github.com/collinb04",
+    link: "https://github.com/collinb04/PhysioLens",
   },
 ]
 </script>
